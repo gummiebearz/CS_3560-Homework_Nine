@@ -1,4 +1,4 @@
-package main.proxy;
+package proxy;
 
 import java.util.HashMap;
 import java.util.List;

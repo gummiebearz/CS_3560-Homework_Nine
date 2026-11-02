@@ -1,4 +1,4 @@
-package test.flyweight;
+package flyweight;
 
 import main.flyweight.CharacterProperties;
 

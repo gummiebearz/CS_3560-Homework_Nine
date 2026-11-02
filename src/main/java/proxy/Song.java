@@ -1,4 +1,4 @@
-package main.proxy;
+package proxy;
 
 public class Song {
     private final int id;

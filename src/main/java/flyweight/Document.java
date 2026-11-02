@@ -1,4 +1,4 @@
-package main.flyweight;
+package flyweight;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

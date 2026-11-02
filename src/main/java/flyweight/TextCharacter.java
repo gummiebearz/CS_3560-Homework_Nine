@@ -1,4 +1,4 @@
-package main.flyweight;
+package flyweight;
 
 // Character object holds extrinsic state (value)
 // and reference to intrinsic state
