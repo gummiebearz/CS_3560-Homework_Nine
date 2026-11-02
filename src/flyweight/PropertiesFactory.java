@@ -7,7 +7,7 @@ class PropertiesFactory {
     private static Map<String, CharacterProperties> pool =  new HashMap<>();
 
     public static CharacterProperties getCharacterProperties(String font, int size, String color) {
-        String key = font + "-" + size + "-" + color;
+        String key = font + "|" + size + "|" + color;
         CharacterProperties charProps = pool.get(key);
 
         // If value not found for that key, insert new key-value pair
