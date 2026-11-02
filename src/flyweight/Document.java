@@ -34,4 +34,10 @@ public class Document {
 
         this.characters.set(index, new TextCharacter(character, characterProperties));
     }
+
+    public void display() {
+        for (TextCharacter character : this.characters) {
+            System.out.println(character.getValue() + " [" + character.getFont() + ", " + character.getSize() + ", " + character.getColor() + "]");
+        }
+    }
 }
