@@ -72,8 +72,8 @@ public class Document {
             String line = fileReader.readLine();
             while(line != null) {
                 String[] tokens = line.split("\\|");
-                if(tokens.length != 1) {
-                    throw new Exception("Error parsing token: invalid number of tokens");
+                if(tokens.length != 4) {
+                    throw new Exception("Error parsing token: not enough number of tokens");
                 }
 
                 char value = (char)Integer.parseInt(tokens[0]);
