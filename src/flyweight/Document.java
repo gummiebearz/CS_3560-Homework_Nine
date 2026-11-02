@@ -73,7 +73,7 @@ public class Document {
             while(line != null) {
                 String[] tokens = line.split("\\|");
                 if(tokens.length != 4) {
-                    throw new Exception("Error parsing token: not enough number of tokens");
+                    throw new Exception("Error parsing token: invalid number of tokens");
                 }
 
                 char value = (char)Integer.parseInt(tokens[0]);
