@@ -40,4 +40,13 @@ public class Document {
             System.out.println(character.getValue() + " [" + character.getFont() + ", " + character.getSize() + ", " + character.getColor() + "]");
         }
     }
+
+    public String getText() {
+        StringBuilder text = new StringBuilder();
+        for (TextCharacter character : this.characters) {
+            text.append(character.getValue());
+        }
+
+        return text.toString();
+    }
 }
