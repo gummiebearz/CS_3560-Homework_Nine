@@ -31,4 +31,8 @@ public class Character {
     public CharacterProperties getProperties() {
         return this.properties;
     }
+
+    public void setProperties(CharacterProperties properties) {
+        this.properties = properties;
+    }
 }
