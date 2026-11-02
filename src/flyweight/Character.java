@@ -1,9 +1,11 @@
 package flyweight;
 
-// Character itself that holds both intrinsic and extrinsic states
+// Character object holds extrinsic state (value)
+// and reference to intrinsic state
+// CharacterProperties object holds the intrinsic data
 public class Character {
-    char value; // extrinsic
-    CharacterProperties properties; // intrinsic
+    private final char value; // extrinsic
+    private CharacterProperties properties; // reference to shared flyweight
 
     public Character(char value, CharacterProperties properties) {
         this.value = value;
