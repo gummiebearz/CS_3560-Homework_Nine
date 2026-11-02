@@ -26,12 +26,7 @@ public class Tester {
                 Song song = proxy.searchById(id);
                 System.out.println("searchById(" + id + "): " + (System.currentTimeMillis() - start) + " ms");
 
-                System.out.println("> Song details:");
-                System.out.println("[ID]: " + song.getId());
-                System.out.println("[Title]: " + song.getTitle());
-                System.out.println("[Artist]: " + song.getArtist());
-                System.out.println("[Album]: " + song.getAlbum());
-                System.out.println();
+                printSong(song);
 
                 System.out.println("---------------------------------");
 
@@ -40,12 +35,7 @@ public class Tester {
                 System.out.println("searchByTitle(" + song.getTitle() + "): " + (System.currentTimeMillis() - start) + " ms");
 
                 for(Song titledSong : titleResults) {
-                    System.out.println("> Song details:");
-                    System.out.println("[ID]: " + titledSong.getId());
-                    System.out.println("[Title]: " + titledSong.getTitle());
-                    System.out.println("[Artist]: " + titledSong.getArtist());
-                    System.out.println("[Album]: " + titledSong.getAlbum());
-                    System.out.println();
+                    printSong(titledSong);
                 }
 
                 System.out.println("---------------------------------");
@@ -54,13 +44,8 @@ public class Tester {
                 List<Song> albumResults = proxy.searchByAlbum(song.getAlbum());
                 System.out.println("searchByAlbum(" + song.getAlbum() + "): " + (System.currentTimeMillis() - start) + " ms");
 
-                for(Song albumSong : titleResults) {
-                    System.out.println("> Song details:");
-                    System.out.println("[ID]: " + albumSong.getId());
-                    System.out.println("[Title]: " + albumSong.getTitle());
-                    System.out.println("[Artist]: " + albumSong.getArtist());
-                    System.out.println("[Album]: " + albumSong.getAlbum());
-                    System.out.println();
+                for(Song albumSong : albumResults) {
+                    printSong(albumSong);
                 }
 
                 System.out.println("---------------------------------");
@@ -68,5 +53,14 @@ public class Tester {
 
             System.out.println();
         }
+    }
+
+    public static void printSong(Song s) {
+        System.out.println("> Song details:");
+        System.out.println("[ID]: " + s.getId());
+        System.out.println("[Title]: " + s.getTitle());
+        System.out.println("[Artist]: " + s.getArtist());
+        System.out.println("[Album]: " + s.getAlbum());
+        System.out.println();
     }
 }
