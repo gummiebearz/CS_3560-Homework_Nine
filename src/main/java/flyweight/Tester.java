@@ -30,11 +30,11 @@ public class Tester {
         System.out.println("Number of unique character properties: " + PropertiesFactory.getPoolSize());
 
         // Save to HelloWorldCS3560.txt
-        document.save("./src/main/flyweight/" + text);
+        document.save("./src/main/java/flyweight/" + text);
 
         // Load into a brand new document
         Document loaded = new Document();
-        loaded.load("./src/main/flyweight/" + text);
+        loaded.load("./src/main/java/flyweight/" + text);
 
         System.out.println();
         System.out.println("Loaded text: " + loaded.getText());
