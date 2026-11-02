@@ -27,4 +27,8 @@ public class Character {
     public String getColor() {
         return this.properties.getColor();
     }
+
+    public CharacterProperties getProperties() {
+        return this.properties;
+    }
 }
