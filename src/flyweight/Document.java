@@ -64,4 +64,33 @@ public class Document {
             e.printStackTrace();
         }
     }
+
+    public void load(String filename) {
+        try (BufferedReader fileReader = new BufferedReader(new FileReader(filename + ".txt"))) {
+            this.characters.clear();
+
+            String line = fileReader.readLine();
+            while(line != null) {
+                String[] tokens = line.split("\\|");
+                if(tokens.length < 1) {
+                    throw new Exception("Error parsing token: not enough number of tokens");
+                }
+
+                char value = (char)Integer.parseInt(tokens[0]);
+                String font = tokens[1];
+                int size = Integer.parseInt(tokens[2]);
+                String color = tokens[3];
+
+                // Use of flyweight from PropertiesFactory
+                this.characters.add(new TextCharacter(value, PropertiesFactory.getCharacterProperties(font, size, color)));
+
+                line = fileReader.readLine();
+            }
+        } catch(IOException e) {
+            System.err.println("Error reading file " + filename + ".txt");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }
