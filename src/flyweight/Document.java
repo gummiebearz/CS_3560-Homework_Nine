@@ -1,5 +1,9 @@
 package flyweight;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,5 +52,16 @@ public class Document {
         }
 
         return text.toString();
+    }
+
+    public void save(String filename) {
+        try (FileWriter fileWriter = new FileWriter(filename + ".txt")) {
+            for (TextCharacter c : characters) {
+                fileWriter.write((int) c.getValue() + "|" + c.getFont() + "|" + c.getSize() + "|" + c.getColor() + "\n");
+            }
+        } catch(IOException e) {
+            System.err.println("Error writing to file " + filename + ".txt");
+            e.printStackTrace();
+        }
     }
 }
