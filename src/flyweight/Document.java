@@ -26,4 +26,12 @@ public class Document {
         // Edit the character at given index
         this.characters.get(index).setProperties(characterProperties);
     }
+
+    // Value and style editing
+    public void editCharacter(int index, char character, String font, int size, String color) {
+        // Get flyweight (intrinsic data) from factory
+        CharacterProperties characterProperties = PropertiesFactory.getCharacterProperties(font, size, color);
+
+        this.characters.set(index, new TextCharacter(character, characterProperties));
+    }
 }
