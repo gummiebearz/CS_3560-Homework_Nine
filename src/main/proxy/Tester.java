@@ -1,10 +1,10 @@
-package proxy;
+package main.proxy;
 
 import java.util.List;
 
 public class Tester {
     public static void main(String[] args) {
-        // Add songs to the list before the proxy is initialized
+        // Add songs to the list before the main.main.proxy is initialized
         RealSongService realService = new RealSongService();
         realService.addSong(new Song(1, "Shape of You", "Ed Sheeran", "Divide", 234));
         realService.addSong(new Song(2, "Perfect", "Ed Sheeran", "Divide", 263));
@@ -12,7 +12,7 @@ public class Tester {
         realService.addSong(new Song(4, "Levitating", "Dua Lipa", "Future Nostalgia", 203));
         realService.addSong(new Song(5, "Home", "Michael Buble", "Call Me Irresponsible", 226));
 
-        // Initialize proxy
+        // Initialize main.main.proxy
         SongService proxy = new SongServiceProxy(realService);
 
         // Each song is searched twice:

@@ -1,4 +1,4 @@
-package flyweight;
+package main.flyweight;
 
 public class Tester {
     public static void main(String[] args) {
@@ -30,11 +30,11 @@ public class Tester {
         System.out.println("Number of unique character properties: " + PropertiesFactory.getPoolSize());
 
         // Save to HelloWorldCS3560.txt
-        document.save("./src/flyweight/" + text);
+        document.save("./src/main/flyweight/" + text);
 
         // Load into a brand new document
         Document loaded = new Document();
-        loaded.load("./src/flyweight/" + text);
+        loaded.load("./src/main/flyweight/" + text);
 
         System.out.println();
         System.out.println("Loaded text: " + loaded.getText());

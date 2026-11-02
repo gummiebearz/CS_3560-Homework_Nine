@@ -1,4 +1,4 @@
-package flyweight;
+package main.flyweight;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,7 +15,7 @@ public class Document {
     }
 
     public void addCharacter(char character, String font, int size, String color) {
-        // Get flyweight (intrinsic data) from factory
+        // Get main.flyweight (intrinsic data) from factory
         CharacterProperties characterProperties = PropertiesFactory.getCharacterProperties(font, size, color);
 
         // Add new character to the list
@@ -24,7 +24,7 @@ public class Document {
 
     // Style editing
     public void editCharacter(int index, String font, int size, String color) {
-        // Get flyweight (intrinsic data) from factory
+        // Get main.flyweight (intrinsic data) from factory
         CharacterProperties characterProperties = PropertiesFactory.getCharacterProperties(font, size, color);
 
         // Edit the character at given index
@@ -33,7 +33,7 @@ public class Document {
 
     // Value and style editing
     public void editCharacter(int index, char character, String font, int size, String color) {
-        // Get flyweight (intrinsic data) from factory
+        // Get main.flyweight (intrinsic data) from factory
         CharacterProperties characterProperties = PropertiesFactory.getCharacterProperties(font, size, color);
 
         this.characters.set(index, new TextCharacter(character, characterProperties));
@@ -81,7 +81,7 @@ public class Document {
                 int size = Integer.parseInt(tokens[2]);
                 String color = tokens[3];
 
-                // Use of flyweight from PropertiesFactory
+                // Use of main.flyweight from PropertiesFactory
                 this.characters.add(new TextCharacter(value, PropertiesFactory.getCharacterProperties(font, size, color)));
 
                 line = fileReader.readLine();

@@ -1,4 +1,4 @@
-package flyweight;
+package main.flyweight;
 
 // Intrinsic (shared) states
 public class CharacterProperties {
